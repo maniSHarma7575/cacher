@@ -1,4 +1,4 @@
-package cacher
+package cache
 
 import (
 	"context"
@@ -7,7 +7,7 @@ import (
 
 type FetchFunc func() (interface{}, error)
 
-type CacherInterface interface {
+type CacheInterface interface {
 	io.Closer
 
 	Fetch(ctx context.Context, key string, value interface{}, fetchFunc FetchFunc) error
